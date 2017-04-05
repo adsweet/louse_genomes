@@ -1,8 +1,8 @@
 #!usr/bin/env perl
 
 #################################################################################################
-#This script separates out loci into separate files
-#Written by Bret M. Boyd
+# This script separates out loci into separate files
+# Written by Bret M. Boyd
 #################################################################################################
 
 use strict;
@@ -12,7 +12,7 @@ my @namearray=();
 my %namehash=();
 my $count=0;
 
-open FH, "<INPUT FILE"; #FASTA file, perhaps the output from fqtofasta.pl
+open FH, "<INPUT FILE"; # FASTA file, perhaps the output from fqtofasta.pl
 while (<FH>) {
         if (/^>\S+.(PHUM\d+)\S+/) {
                 my $name=$1;
