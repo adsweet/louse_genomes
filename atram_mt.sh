@@ -1,8 +1,8 @@
 #!usr/bin/bash
 
 #################################################################################################
-#This script will run aTRAM to assemble mitochondrial genes
-#Written by Andrew D. Sweet and Bret M. Boyd
+# This script will run aTRAM to assemble mitochondrial genes.
+# Written by Andrew D. Sweet and Bret M. Boyd
 #################################################################################################
 
 
