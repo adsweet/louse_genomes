@@ -10,7 +10,7 @@ This Perl script combines the top BLAST hits from each locus and combines them i
 
 ## 2. Mapping lower-coverage genomes
 ### a. reference_mapping_pipeline_script.sh
-This shell script will run Bowtie2, filter resulting sites, and produce a consensus from filtered variants. Before running, set the library name, reference file name, and path to all relevant directories. The filtereing parameters can be changed as needed. Output files: .bam, mapped.sorted.bam, .mpileup, .vcf (x2, from samtools and GATK), depth.txt, consensus.fq (2x, before and after GATK filtereing).
+This shell script will run Bowtie2, filter resulting sites, and produce a consensus from filtered variants. Before running, set the library name, reference file name, and paths to all relevant directories. The filtereing parameters can be changed as needed. Output files: .bam, mapped.sorted.bam, .mpileup, .vcf (x2, from samtools and GATK), depth.txt, consensus.fq (2x, before and after GATK filtereing).
 
 ### b. changefastqnames.py
 This Python script will change the header names from the consensus.fq FASTQ files. The reference_mapping_pipeline_script.sh script outputs files with the reference as the header (e.g. @LOCUS.REFERENCE_NAME), rather than the individual library names.
