@@ -1,5 +1,5 @@
-# louse_genome_assembly
-These scripts were used to assemble and map avian louse genomes. The resulting loci were used for phylogenetic analysis. The pipeline was run as follows:
+# Scripts for working with genomic data from lice
+These scripts can be used to assemble and map avian louse genomes (or other small genomes without an existing reference). The resulting loci can be used for phylogenetic analysis. Run the pipeline as follows:
 
 ## 1. Assembling reference loci set
 ### a. runatram.sh
@@ -26,5 +26,10 @@ Usage: ```python3 fq2fa.py output_fule```
 ### d. sepfiles.pl
 This script separates each locus into its own file. These files can then be aligned with standard multiple sequence alignment software (e.g. MAFFT)
 
-### e. fixnames.py and fixnamesloop.sh
-These scripts change the FASTA headers in the locus files from sepfiles.pl by removing the locus names (>SAMPLE_NAME.LOCUS to >SAMPLE_NAME). As a result, all sequences from the same individual will have the same FASTA header. This is necessary for creating concatenated alignments or summarizing gene trees.
+## Related scripts
+
+### fixnames.py and fixnamesloop.sh
+These scripts change the FASTA headers in alignment files by removing the locus names (>SAMPLE_NAME.LOCUS to >SAMPLE_NAME). As a result, all sequences from the same individual will have the same FASTA header. This is necessary for creating concatenated alignments or summarizing gene trees.
+
+### atram_mt.sh
+This shell script will run aTRAM to assemble loci using various library fractions. Primarily, use this script to assemble mitochondrial genes. 
