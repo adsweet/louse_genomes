@@ -26,7 +26,7 @@ samtools sort $mylib.mapped.bam $mylib.mapped.sorted;
 samtools mpileup -uf $myrefpath/$myref.fa $mylib.mapped.sorted.bam -d 75 -Q 28 -q 10 > $mylib.mpileup
 bcftools view -cg $mylib.mpileup > $mylib.samtools.vcf;
 perl PATH/vcfutils.pl vcf2fq $mylib.samtools.vcf > $mylib.samtools.consensus.fq; # THIS IS FOR GETTING A CONSENSUS BEFORE VCF FILTERING
-samtools depth $mylib.mapped.sorted.bam | awk '{sum+=$3; sumsq+=$3*$3} END { print "Average =",sum/NR; print "Stdev =",sqrt(sumsq/NR - (sum/NR)**2)}' >> $mylib.depth.txt; ##CALCULATE AVERAGE AND STDEV DEPTH
+samtools depth $mylib.mapped.sorted.bam | awk '{sum+=$3; sumsq+=$3*$3} END { print "Average =",sum/NR; print "Stdev =",sqrt(sumsq/NR - (sum/NR)**2)}' >> $mylib.depth.txt; # CALCULATE AVERAGE AND STDEV DEPTH
 
 #CREATE A PICARD .DICT FILE FOR THE REFERENCE SEQUENCE
 picard-tools CreateSequenceDictionary R= $myrefpath/$myref.fa O= $myrefpath/$myref.dict # THIS ONLY NEEDS TO BE RUN ONCE PER REFERENCE SET; COMMENT OUT OTHERWISE
