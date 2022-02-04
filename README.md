@@ -21,7 +21,7 @@ Usage:
 ### c. fq2fa.py
 A basic Bio Python script to convert from FASTQ format to FASTA format. The script first concatenates all .fq files in the directory into a single file, and converts it to FASTA format.
 
-Usage: ```python3 fq2fa.py output_fule```
+Usage: ```python3 fq2fa.py output_file```
 
 ### d. sepfiles.pl
 This script separates each locus into its own file. These files can then be aligned with standard multiple sequence alignment software (e.g. MAFFT)
@@ -33,3 +33,8 @@ These scripts change the FASTA headers in alignment files by removing the locus 
 
 ### atram_mt.sh
 This shell script will run aTRAM to assemble loci using various library fractions. Primarily, use this script to assemble mitochondrial genes. 
+
+### aed_filter.py
+Python script to filter out genes predicted by the MAKER pipeline with AED scores >0.5.
+
+Usage: ```python aed_filter.py <input FASTA> <output FASTA>```
